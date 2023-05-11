@@ -11,4 +11,7 @@ module.exports = {
       accounts: [`0x${PRIVATE_KEY}`]
     }
   },
+  paths: {
+    artifacts: "./frontend/src/artifacts",
+  },
 }
