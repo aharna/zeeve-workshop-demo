@@ -18,10 +18,14 @@ import type {
   UseContractWriteConfig,
 } from 'wagmi';
 
+
+
 const contractConfig = {
-  address: '0xB31937695bBFf69864242fdAD439937Dd6E5921c',
+  address: '<add your deployed smart contract address here>',
   abi,
 };
+
+
 
 const Home: NextPage = () => {
   const [mounted, setMounted] = React.useState(false);
