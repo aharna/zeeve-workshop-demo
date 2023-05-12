@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import styles from '../styles/Home.module.css';
 import type { NextPage } from 'next';
 import {
   useAccount,
@@ -9,20 +8,18 @@ import {
   useContractWrite,
   usePrepareContractWrite,
   useWaitForTransaction,
-
 } from 'wagmi';
-// import { abi } from '../contract-abi';
-import FlipCard ,{ BackCard , FrontCard } from '../../components/FlipCard';
+import { abi } from '../contract-abi';
+import FlipCard, { BackCard, FrontCard } from '../components/FlipCard';
 import type {
   UsePrepareContractWriteConfig,
   UseContractReadConfig,
-  UseContractWriteConfig
+  UseContractWriteConfig,
 } from 'wagmi';
 
-
 const contractConfig = {
-  address: '0x496F11A0A9F3558C4B2d3a8cB2924738187ba44d',
-  // abi,
+  address: '0x669D710555c6782A335689D2b9B637863B7Ad2A2',
+  abi,
 };
 
 const Home: NextPage = () => {
@@ -70,10 +67,10 @@ const Home: NextPage = () => {
   return (
     <div className="page">
       <div className="container">
-        <main className={styles.main} >
+        <main >
         <div style={{ flex: '1 1 auto' }}>
           <div style={{ padding: '24px 24px 24px 0' }}>
-            <h1>Let's Mint NFT 😎</h1>
+            <h1>NFT Demo Mint</h1>
             <p style={{ margin: '12px 0 24px' }}>
               {totalMinted} minted so far!
             </p>
@@ -112,7 +109,7 @@ const Home: NextPage = () => {
             <FrontCard isCardFlipped={isMinted}>
               <Image
                 layout="responsive"
-                src="/nft.jpg"
+                src="/nft.png"
                 width="500"
                 height="500"
                 alt="RainbowKit Demo NFT"
@@ -123,7 +120,7 @@ const Home: NextPage = () => {
             <BackCard isCardFlipped={isMinted}>
               <div style={{ padding: 24 }}>
                 <Image
-                  src="/nft.jpg"
+                  src="/nft.png"
                   width="80"
                   height="80"
                   alt="RainbowKit Demo NFT"
@@ -135,14 +132,14 @@ const Home: NextPage = () => {
                 </p>
                 <p style={{ marginBottom: 6 }}>
                   View on{' '}
-                  <a href={`https://rinkeby.etherscan.io/tx/${mintData?.hash}`}>
+                  <a href={`https://mumbai.polygonscan.com/tx/${mintData?.hash}`}>
                     Etherscan
                   </a>
                 </p>
                 <p>
                   View on{' '}
                   <a
-                    href={`https://testnets.opensea.io/assets/rinkeby/${txData?.to}/1`}
+                    href={`https://testnets.opensea.io/assets/mumbai/${txData?.to}/1`}
                   >
                     Opensea
                   </a>
