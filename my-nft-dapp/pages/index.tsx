@@ -10,6 +10,7 @@ import {
   useWaitForTransaction,
 } from 'wagmi';
 import { abi } from '../contract-abi';
+import styles from '../styles/Home.module.css';
 import FlipCard, { BackCard, FrontCard } from '../components/FlipCard';
 import type {
   UsePrepareContractWriteConfig,
@@ -18,7 +19,7 @@ import type {
 } from 'wagmi';
 
 const contractConfig = {
-  address: '0x669D710555c6782A335689D2b9B637863B7Ad2A2',
+  address: '0xB31937695bBFf69864242fdAD439937Dd6E5921c',
   abi,
 };
 
@@ -67,7 +68,7 @@ const Home: NextPage = () => {
   return (
     <div className="page">
       <div className="container">
-        <main >
+        <main className={styles.main} >
         <div style={{ flex: '1 1 auto' }}>
           <div style={{ padding: '24px 24px 24px 0' }}>
             <h1>NFT Demo Mint</h1>
@@ -109,7 +110,7 @@ const Home: NextPage = () => {
             <FrontCard isCardFlipped={isMinted}>
               <Image
                 layout="responsive"
-                src="/nft.png"
+                src="/nft.jpg"
                 width="500"
                 height="500"
                 alt="RainbowKit Demo NFT"
@@ -120,7 +121,7 @@ const Home: NextPage = () => {
             <BackCard isCardFlipped={isMinted}>
               <div style={{ padding: 24 }}>
                 <Image
-                  src="/nft.png"
+                  src="/nft.jpg"
                   width="80"
                   height="80"
                   alt="RainbowKit Demo NFT"
