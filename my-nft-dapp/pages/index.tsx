@@ -73,7 +73,7 @@ const Home: NextPage = () => {
         <main className={styles.main} >
         <div style={{ flex: '1 1 auto' }}>
           <div style={{ padding: '24px 24px 24px 0' }}>
-            <h1>NFT Demo Mint</h1>
+            <h1>Let's Mint NFT 😎</h1>
             <p style={{ margin: '12px 0 24px' }}>
               {totalMinted} minted so far!
             </p>
